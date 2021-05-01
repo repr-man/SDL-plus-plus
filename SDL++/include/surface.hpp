@@ -112,7 +112,7 @@ namespace SDL {
 		int SaveBMP_RW(SDL_RWops* dst, bool freedst) { return SDL_SaveBMP_RW(surface, dst, freedst); }
 
 		// Save a surface to a file.
-		int SaveBMP(std::string file) { SDL_SaveBMP_RW(surface, SDL_RWFromFile(file.c_str(), "wb"), true); }
+		int SaveBMP(std::string file) { return SDL_SaveBMP_RW(surface, SDL_RWFromFile(file.c_str(), "wb"), true); }
 
 		/**
 		 *  \brief Sets the RLE acceleration hint for a surface.
@@ -230,10 +230,10 @@ namespace SDL {
 		 *  Note that blits are automatically clipped to the edges of the source
 		 *  and destination surfaces.
 		 */
-		bool SetClipRect(const Rect& rect) { SDL_SetClipRect(surface, &rect.rect); }
+		bool SetClipRect(const Rect& rect) { return SDL_SetClipRect(surface, &rect.rect); }
 
 		// Disables the clipping rectangle for the destination surface in a blit.
-		bool DisableClip() { SDL_SetClipRect(surface, NULL); }
+		bool DisableClip() { return SDL_SetClipRect(surface, NULL); }
 
 		// Gets the clipping rectangle for the destination surface in a blit.
 		Rect GetClipRect() {
