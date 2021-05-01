@@ -397,6 +397,8 @@ namespace SDL {
 					scancodes[scancode] = false;
 				}
 					break;
+				default:
+					break;
 				}
 
 				event_at[(Uint32)e.type] = c.timestamp;
