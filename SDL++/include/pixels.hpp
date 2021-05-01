@@ -84,10 +84,10 @@ namespace SDL {
         Uint32 MapRGB(Uint8 r, Uint8 g, Uint8 b) const { return SDL_MapRGB(format, r, g, b); }
 
         // \brief Maps an RGBA quadruple to a pixel value for a given pixel format.
-        Uint32 MapRGBA(Uint8 r, Uint8 g, Uint8 b, Uint8 a) const { SDL_MapRGBA(format, r, g, b, a); }
+        Uint32 MapRGBA(Uint8 r, Uint8 g, Uint8 b, Uint8 a) const { return SDL_MapRGBA(format, r, g, b, a); }
 
         // \brief Maps an RGBA quadruple to a pixel value for a given pixel format.
-        Uint32 MapRGBA(Color c) const { SDL_MapRGBA(format, c.r, c.g, c.b, c.a); }
+        Uint32 MapRGBA(Color c) const { return SDL_MapRGBA(format, c.r, c.g, c.b, c.a); }
 
         // \brief Get the RGB components from a pixel of the specified format.
         void GetRGB(Uint32 pixel, Uint8& r, Uint8& g, Uint8& b) const { SDL_GetRGB(pixel, format, &r, &g, &b); }
