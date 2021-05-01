@@ -445,7 +445,7 @@ namespace SDL {
          *  \param dev The device ID of which we will query queued audio size.
          *  \return Number of bytes (not samples!) of queued audio.
          */
-        Uint32 GetQueuedAudioSize() { SDL_GetQueuedAudioSize(ID); }
+        Uint32 GetQueuedAudioSize() { return SDL_GetQueuedAudioSize(ID); }
 
         /**
          *  Drop any queued audio data. For playback devices, this is any queued data
@@ -511,7 +511,7 @@ namespace SDL {
          *
          *  Supported are RIFF WAVE files with the formats PCM (8, 16, 24, and 32 bits),
          *  IEEE Float (32 bits), Microsoft ADPCM and IMA ADPCM (4 bits), and A-law and
-         *  µ-law (8 bits). Other formats are currently unsupported and cause an error.
+         *  Âµ-law (8 bits). Other formats are currently unsupported and cause an error.
          *
          *  If this function succeeds, the pointer returned by it is equal to \c spec
          *  and the pointer to the audio data allocated by the function is written to
