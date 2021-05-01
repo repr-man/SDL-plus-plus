@@ -410,7 +410,7 @@ namespace SDL {
 		 *  high-dpi support (e.g. iOS or OS X). Use SDL_GL_GetDrawableSize() or
 		 *  SDL_GetRendererOutputSize() to get the real client area size in pixels.
 		 */
-		Point& GetSize() {
+		Point GetSize() {
 			Point returnVal;
 			SDL_GetWindowSize(window, &returnVal.w, &returnVal.h);
 			return returnVal;
@@ -782,7 +782,7 @@ namespace SDL {
 	 *
 	 *  \return 0 on success, or -1 otherwise.
 	 */
-	static int SetWindowModalFor(Window& modal_window, Window& parent_window) { SDL_SetWindowModalFor(modal_window.window, parent_window.window); }
+	static int SetWindowModalFor(Window& modal_window, Window& parent_window) { return SDL_SetWindowModalFor(modal_window.window, parent_window.window); }
 
 	// \brief Returns whether the screensaver is currently enabled (default off).
 	static bool IsScreenSaverEnabled() { return SDL_IsScreenSaverEnabled(); }
