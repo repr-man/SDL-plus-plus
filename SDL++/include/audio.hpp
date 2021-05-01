@@ -488,8 +488,8 @@ namespace SDL {
          *  function or you will cause deadlock.
          */
 
-        AudioDevice& Lock() { SDL_LockAudioDevice(ID); }
-        AudioDevice& Unlock() { SDL_UnlockAudioDevice(ID); }
+        void Lock() { SDL_LockAudioDevice(ID); }
+        void Unlock() { SDL_UnlockAudioDevice(ID); }
     };
 
     struct WAV {
